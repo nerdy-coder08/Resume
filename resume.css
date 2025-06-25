@@ -1,0 +1,66 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(50, 50, 50); /* Consolidated background-color here */
+    margin: 0;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Target the h1 specifically within the name-section */
+.name-section h1 {
+    background-color: rgb(234, 116, 169); /*desired background color for just the text */
+    color: lightskyblue; /* Keep your text color for contrast */
+    padding: 5px 10px; /* Add some padding around the text for the background */
+    display: inline-block; /* This is the key: makes the element behave like text but allows padding/background to wrap it */
+    border-radius: 5px; /* Optional: adds slightly rounded corners to the background box */
+}
+
+/* You might want to remove any background from the parent .name-section if you had it there */
+.name-section {
+    /* background-color: transparent; /* Or remove this line if it's not set */
+    padding: 0; /* Remove padding if you want the h1's padding to be the only spacing */
+    margin-bottom: 20px; /* Keep space below the entire name section */
+    width: 100%; /* Ensure the name-section still takes full width for centering */
+    text-align: center; /* Keep this to center the inline-block h1 */
+}
+
+/* Ensure the paragraph below the name is styled as you wish */
+.name-section p {
+    color: #ccc; /* Color for "High School, Grade 9" */
+    margin-top: 10px; /* Add some space between the name and the grade */
+}
+
+
+.letter {
+    display: inline-block;
+    margin: 0 2px;
+    font-weight: bold;
+}
+
+h1 {
+    color: lightskyblue; /* Added semicolon */
+}
+
+h2 {
+    color: rgb(9, 110, 0); /* Added semicolon */
+}
+
+p {
+    color: white; /* Added semicolon */
+}
+
+.centered-box {
+    width: 100%;
+    border: 2px double rgb(9, 110, 0);
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+}
+a {
+    color: dodgerblue; /* Added semicolon */
+    text-decoration: none; /* Added semicolon */
+}
