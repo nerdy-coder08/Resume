@@ -1,6 +1,7 @@
+/* Existing CSS */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(50, 50, 50); /* Consolidated background-color here */
+    background-color: rgb(255, 255, 255); /* Consolidated background-color here */
     margin: 0;
     padding: 20px;
 
@@ -8,32 +9,58 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    transition: background-color .75s ease; /* Add transition for smooth change */
 }
 
-/* Target the h1 specifically within the name-section */
-.name-section h1 {
-    background-color: rgb(234, 116, 169); /*desired background color for just the text */
-    color: lightskyblue; /* Keep your text color for contrast */
-    padding: 5px 10px; /* Add some padding around the text for the background */
-    display: inline-block; /* This is the key: makes the element behave like text but allows padding/background to wrap it */
-    border-radius: 5px; /* Optional: adds slightly rounded corners to the background box */
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a; /* Darker background */
+    color: #e0e0e0; /* Lighter text color for general paragraphs */
+    transition: color .75 ease
 }
 
-/* You might want to remove any background from the parent .name-section if you had it there */
+body.dark-mode .name-section p {
+    color: #b0b0b0; /* Adjust specific text colors for dark mode */
+    transition: color .75 ease
+}
+
+body.dark-mode h1 {
+    color: #87cefa; /* Adjust h1 color for dark mode */
+    transition: color .75 ease
+}
+
+body.dark-mode h2 {
+    color: #66bb6a; /* Adjust h2 color for dark mode */
+    transition: color .75 ease
+}
+
+body.dark-mode p {
+    color: #e0e0e0; /* Ensure general paragraphs are light */
+    transition: color .75 ease
+}
+
+body.dark-mode a {
+    color: #90caf9; /* Adjust link color for dark mode */
+    transition: color .75 ease
+}
+
+body.dark-mode .centered-box {
+    border: 2px double #66bb6a; /* Adjust border color for dark mode */
+    transition: color .75 ease
+}
+
+/* Rest of your existing CSS */
 .name-section {
-    /* background-color: transparent; /* Or remove this line if it's not set */
-    padding: 0; /* Remove padding if you want the h1's padding to be the only spacing */
-    margin-bottom: 20px; /* Keep space below the entire name section */
-    width: 100%; /* Ensure the name-section still takes full width for centering */
-    text-align: center; /* Keep this to center the inline-block h1 */
+    padding: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
 }
 
-/* Ensure the paragraph below the name is styled as you wish */
 .name-section p {
-    color: #ccc; /* Color for "High School, Grade 9" */
-    margin-top: 10px; /* Add some space between the name and the grade */
+    color: #000000;
+    margin-top: 10px;
 }
-
 
 .letter {
     display: inline-block;
@@ -42,15 +69,15 @@ body {
 }
 
 h1 {
-    color: lightskyblue; /* Added semicolon */
+    color: lightskyblue;
 }
 
 h2 {
-    color: rgb(9, 110, 0); /* Added semicolon */
+    color: rgb(9, 110, 0);
 }
 
 p {
-    color: white; /* Added semicolon */
+    color: rgb(0, 0, 0);
 }
 
 .centered-box {
@@ -61,6 +88,71 @@ p {
     text-align: center;
 }
 a {
-    color: dodgerblue; /* Added semicolon */
-    text-decoration: none; /* Added semicolon */
+    color: dodgerblue;
+    text-decoration: none;
+}
+.switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  z-index: 1000;
+  transition: .75 ease
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: .75 ease
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .75s;
+  transition: .75s ease;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .75s;
+  transition: .75s ease;
+}
+
+input:checked + .slider {
+  background-color: #000000;
+}
+
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.slider:hover {
+    background-color: #eeff00; /* This hover effect is on the slider itself, not the background */
 }

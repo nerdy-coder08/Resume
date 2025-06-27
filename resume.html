@@ -1,12 +1,17 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="resume.css">
 <title>My Resume</title>
 </head>
 <body>
+    <!-- Add this HTML for the switch -->
+    <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider round"></span>
+    </label>
+    <!-- End of switch HTML -->
 
-    <!-- This is where your .name-section should go -->
     <div class="name-section">
         <h1>
             Shrravan Balamurugan
@@ -27,6 +32,38 @@
             </a>
         </p>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', ( ) => {
+          const darkModeToggle = document.getElementById('darkModeToggle');
+          const body = document.body;
+
+          function applyDarkMode(isDarkMode) {
+            if (isDarkMode) {
+              body.classList.add('dark-mode');
+            } else {
+              body.classList.remove('dark-mode');
+            }
+          }
+
+          const savedDarkMode = localStorage.getItem('darkMode');
+          if (savedDarkMode === 'enabled') {
+            darkModeToggle.checked = true;
+            applyDarkMode(true);
+          }
+
+          darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+              applyDarkMode(true);
+              localStorage.setItem('darkMode', 'enabled');
+            } else {
+              applyDarkMode(false);
+              localStorage.setItem('darkMode', 'disabled');
+            }
+          });
+        });
+    </script>
+        </p>
+    </div>
     <!-- End of .name-section -->
 
     <h1>
@@ -44,14 +81,16 @@
         Skills
     </h1>
     <p>
-    → Quick learner on the job <br>
-→ Good at listening and following instructions <br>
-→ Enjoy learning new things <br>
-→ Good customer service and relationship skills <br>
+    → Quick learner on the job <br><br>
+→ Good at listening and following instructions <br><br>
+→ Strong problem-solving skills <br><br>
+→ Enjoy learning new things <br><br>
+→ Good customer service and relationship skills <br><br>
     </p>
     <h1>
         About Me
     </h1>
+    <div>
     <p>
 Currently in high school, in grade 9, with a passion for math and helping people.<br>
 I also have a strong commitment to build a better version of myself.<br>Seeking a job to develop my skills and gain valuable experience.
@@ -86,5 +125,36 @@ I also have a strong commitment to build a better version of myself.<br>Seeking 
 → Worked well as a team member and provided valuable insights for the project <br><br>
 → Developed critical thinking skills and developing focus and perspective <br>
     </p>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const darkModeToggle = document.getElementById('darkModeToggle');
+          const body = document.body;
+
+          function applyDarkMode(isDarkMode) {
+            if (isDarkMode) {
+              body.classList.add('dark-mode');
+            } else {
+              body.classList.remove('dark-mode');
+            }
+          }
+
+          const savedDarkMode = localStorage.getItem('darkMode');
+          if (savedDarkMode === 'enabled') {
+            darkModeToggle.checked = true;
+            applyDarkMode(true);
+          }
+
+          darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+              applyDarkMode(true);
+              localStorage.setItem('darkMode', 'enabled');
+            } else {
+              applyDarkMode(false);
+              localStorage.setItem('darkMode', 'disabled');
+            }
+          });
+        });
+    </script>
+    </div>
 </body>
 </html>
